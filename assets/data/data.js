@@ -69,12 +69,12 @@ export const sliderData = [
 
 ////////////////////////////////////////////////////////////////////
 
-  export const freeGames = [
+  export const freeGames = [ 
     {
       poster: require('../../assets/images/Altos-Odyssey.jpeg'),
       title: 'Altos Odyssey',
       subtitle: 'Noodlecake Studios',
-      isFree: 'Yes',
+      isFree: 'Yes', 
       id: '1',
     },
     {

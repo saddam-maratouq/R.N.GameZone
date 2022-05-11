@@ -16,7 +16,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
         
   return (
       <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home' >
+      <Stack.Navigator initialRouteName='Main' >
         <Stack.Screen name="Main" component={ Main} options={{ headerShown:false}} />
         <Stack.Screen name="Home" component= {Home} options={{ headerShown:false}}  />    
       </Stack.Navigator>
