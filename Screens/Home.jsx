@@ -7,6 +7,7 @@ import {
   ImageBackground,
   Image,
   TextInput,
+  TouchableOpacity
 } from "react-native";
 
 import React , {useState} from "react";
@@ -28,12 +29,14 @@ import ListGame from "../components/ListGame";
 //data 
 import { freeGames , paidGames} from '../assets/data/data'
 
+import { useNavigation } from "@react-navigation/native";
 
 
 
 const Home = () => {
   
-
+  const navigation = useNavigation(); 
+ 
     //to control what data shown ( text , list , component ...  ) by number 
     // same true or false by and  
 
@@ -52,12 +55,16 @@ const Home = () => {
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView style={{ padding: 20 }}>
         <View style={styles.headerContent}>
-          <Text style={styles.Text}> hello joun Doe </Text>
+          <Text style={styles.Text}> hello joun Doe </Text> 
+          <TouchableOpacity 
+            onPress={() => navigation.openDrawer()}  
+          >
           <Image
             source={require("../assets/images/user-profile.jpg")}
-            style={styles.user}
+            style={styles.user} 
           />
-        </View>
+          </TouchableOpacity>
+        </View> 
         {/* search Input */}
         <View style={styles.InputContent}>
           <FontAwesome
