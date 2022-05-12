@@ -11,7 +11,7 @@ import React from "react";
 
 //icon
 import { FontAwesome5 } from "@expo/vector-icons";
-import { NavigationContainer } from "@react-navigation/native";
+
 import { useNavigation } from "@react-navigation/native";
 
 const Main = ({}) => {
@@ -26,19 +26,17 @@ const Main = ({}) => {
       </View>
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Image
-          source={{
-            uri: "https://imgs.search.brave.com/SSZKfG4l5kq-ErYc3yU2hmxtY_O4YLiJMlXRuSenMXc/rs:fit:800:600:1/g:ce/aHR0cHM6Ly9pNS53/YWxtYXJ0aW1hZ2Vz/LmNvbS9hc3IvOWMz/YTNjZjYtOWE4OS00/NDFmLTg0MTItNjQz/NTJlNGVkOWEyXzEu/NTkzNGQ2MWU2NDc4/NmI2MjIzM2YyOTFi/NGVhNzNhZDQuanBl/Zw",
-          }}
+         source={require('../assets/images/homescreen/handel.png') }
           style={styles.MainImage}
           resizeMode='stretch'
         />
       </View>
       <TouchableOpacity
         style={styles.MianButoon}
-        onPress={() => navigation.navigate("Home")}
+        onPress={() => navigation.navigate("Home")} 
       >
         <Text style={styles.text}> Let's Begin </Text>
-        <FontAwesome5 name="arrow-right" size={24} color="#fff" />
+        <FontAwesome5 name="arrow-right" size={24} color="#fff" /> 
       </TouchableOpacity>
     </>
   );
@@ -56,9 +54,10 @@ const styles = StyleSheet.create({
   MainImage: {
     width: 300,
     height: 300,
+   
   },
   MianButoon: {
-    backgroundColor: "black",
+    backgroundColor: "#AD40AF",
     width: Dimensions.get("screen").width - 20,
     // padding:15,
     borderRadius: 15,

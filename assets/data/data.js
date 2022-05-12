@@ -99,17 +99,17 @@ export const sliderData = [
       id: '4',
     },
     {
+      poster: require('../../assets/images/diablo-4.jpeg'),
+      title: 'Diablo 4',
+      subtitle: 'Blizzard Entertainm',
+      isFree: 'Yes',
+      id: '6',
+    },
+    {
       poster: require('../../assets/images/pokemon-unite.jpeg'),
       title: 'Pokémon Unite',
       subtitle: 'The Pokémon Company',
       isFree: 'Yes',
-      id: '5',
-    },
-    {
-      poster: require('../../assets/images/diablo-4.jpeg'),
-      title: 'Diablo 4',
-      subtitle: 'Blizzard Entertainment',
-      isFree: 'No',
-      id: '6',
-    },
+      id: '5', 
+    }, 
   ];

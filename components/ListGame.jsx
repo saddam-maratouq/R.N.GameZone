@@ -22,7 +22,7 @@ const ListGame = ({item}) => {
         }} >
           <Text style={{ textAlign:'center' , color:'#fff' , fontSize:15,}} > 
            { isFree === 'Yes' && 'play' }
-           { isFree === 'No' &&  price }  
+           { isFree === 'No' &&  price }   
 
           </Text>
         </TouchableOpacity>

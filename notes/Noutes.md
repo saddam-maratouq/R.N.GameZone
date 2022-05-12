@@ -11,3 +11,8 @@ when comment
 
 
  
+  -- note you can pass function just to get value from another component 
+  such as this app to get number two when press at free game or paid game 
+  need that number to show specfic game throw this number 1 or 2 
+
+  /// 
