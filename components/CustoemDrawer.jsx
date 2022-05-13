@@ -34,10 +34,9 @@ const CustoemDrawer = (props) => {
           <DrawerItemList {...props} 
           
           / >
-          </View>
+          </View> 
           
-
-         
+  
       </DrawerContentScrollView> 
     
 

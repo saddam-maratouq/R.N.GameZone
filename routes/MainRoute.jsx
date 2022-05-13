@@ -9,11 +9,12 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Main from '../Screens/Main';
 import Home from '../Screens/Home';
 import CustoemDrawer from '../components/CustoemDrawer';
+import TabBarNav from './TabBarNav';
 
 
 //icon laibrary 
-
-import { FontAwesome5 } from '@expo/vector-icons'; 
+import { FontAwesome5 } from '@expo/vector-icons';
+ 
 
 const Stack = createNativeStackNavigator();  
 const Drawer = createDrawerNavigator();
@@ -55,7 +56,7 @@ const Drawer = createDrawerNavigator();
         })}  
        
         >
-        <Drawer.Screen name="Home" component= {Home} options={{headerShown:false}}  />    
+        <Drawer.Screen name="Home" component= {TabBarNav} options={{headerShown:false}}  />    
         <Drawer.Screen name="Main" component={ Main} options={{headerShown:false}} />
       </Drawer.Navigator>
       </NavigationContainer>   
