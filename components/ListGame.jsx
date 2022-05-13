@@ -1,9 +1,13 @@
 import { StyleSheet, Text, View , Image , TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const ListGame = ({item}) => { 
+import { useNavigation } from "@react-navigation/native";
 
-  const { poster , title , subtitle,isFree,price } = item 
+const ListGame = ({item, onPress}) => { 
+  
+  const navigation = useNavigation();  
+
+  const { poster , title , subtitle,isFree,price} = item 
   return (
      <View style={{ flexDirection:'row' , alignItems:'center', justifyContent:'space-between'}} >
        <View style={{ flex:1 , alignItems:'center' , flexDirection:'row' ,marginVertical:20 }} >
@@ -13,7 +17,9 @@ const ListGame = ({item}) => {
          <Text style={{ textTransform:'uppercase'}} >{subtitle}</Text> 
        </View>
        </View> 
-        <TouchableOpacity  style={{
+        <TouchableOpacity 
+      onPress={onPress} 
+         style={{
           backgroundColor:'#0aada8',
           width:100,
           borderRadius:10,

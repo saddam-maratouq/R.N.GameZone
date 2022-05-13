@@ -36,6 +36,10 @@ import { useNavigation } from "@react-navigation/native";
 const Home = () => {
   
   const navigation = useNavigation(); 
+
+
+ 
+   
  
     //to control what data shown ( text , list , component ...  ) by number 
     // same true or false by and  
@@ -109,13 +113,21 @@ const Home = () => {
         </View> 
 
         { getTapGame == 1 && freeGames.map(item => (
-          <ListGame item={item} key={item.id}/> 
-        ))}
+          <ListGame item={item} key={item.id} 
+          //add press to go in specific screen ...
+           onPress= { () =>  navigation.navigate('GameDeatels' , {title:item.title})}  
+          /> 
+        ))} 
 
 
 
         { getTapGame == 2 && paidGames.map(item => (
-          <ListGame item={item} key={item.id}/>  
+          <ListGame item={item} key={item.id} 
+          //add press to go in specific screen ..
+           onPress= { () =>  navigation.navigate('PaidDeatels', {title:item.title})} 
+            
+
+          />  
         ))}
 
 

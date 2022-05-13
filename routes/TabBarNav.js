@@ -1,17 +1,22 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Screens/Home';
 import Favourite from '../Screens/TabScreen/Favourite';
 import Cart from '../Screens/TabScreen/Cart';
-
+//navigatoer
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 
 
 //icon library
 import { FontAwesome5 } from '@expo/vector-icons';
+import GameDeatels from '../Screens/DeatilsScreen/GameDeatels';
 
+import DeatelsStack from '../routes/DeatelsStack'
 
 const Tab = createBottomTabNavigator();
+
+
 
 const TabBarNav = () => {
   return (
@@ -44,22 +49,46 @@ const TabBarNav = () => {
           //another way to control color with more options ...
           tabBarActiveTintColor: 'yellow',
           tabBarInactiveTintColor: '#fff', 
-          tabBarStyle: { backgroundColor: '#AD40Af' }, 
+          tabBarStyle: { backgroundColor: '#7D1E6A' }, 
           drawerLabelStyle:{ fontSize:16 , fontWeight:'bold' ,marginLeft:-25 } ,
           tabBarShowLabel:false,
           headerShown:false,
         })}  
     
     >
-    <Tab.Screen name="Home2" component={Home} />
+    {/* Deatel stack to accses another screen inside home page  */}
+    <Tab.Screen name="Home2" component={DeatelsStack}  
+    //for all Deatel screen 
+      options={ ({route}) => ({
+        // title : route.params?.title
+        tabBarStyle : { display : getTabBarVisebel(route) , backgroundColor:'#7D1E6A'}
+     })}
+    />  
     <Tab.Screen name="Favorite" component={Favourite} /> 
-    <Tab.Screen name="cart" component={Cart} options={{ tabBarBadge:3 ,
+    <Tab.Screen name="cart" component={Cart} options={{ tabBarBadge:3 , 
         tabBarBadgeStyle : { backgroundColor:'yellow'}
     
-     }} /> 
+     }} 
+     /> 
 
   </Tab.Navigator>
   )
+}
+
+//visbel navbar throw routeName 
+const getTabBarVisebel = (route) => {
+  // console.log(route)
+  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Feed'; 
+  console.log(routeName) 
+
+  if (routeName ==='GameDeatels') {
+    return 'none'
+  }
+  'flex' 
+  if (routeName ==='PaidDeatels') {
+    return 'none'
+  }
+  'flex' 
 }
 
 export default TabBarNav

@@ -56,6 +56,8 @@ const Drawer = createDrawerNavigator();
         })}  
        
         >
+    {/* TabBarNav to add tab bar to the home screen */}
+
         <Drawer.Screen name="Home" component= {TabBarNav} options={{headerShown:false}}  />    
         <Drawer.Screen name="Main" component={ Main} options={{headerShown:false}} />
       </Drawer.Navigator>
